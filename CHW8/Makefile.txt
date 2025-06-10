@@ -1,0 +1,13 @@
+all: taskmanager.out
+
+taskmanager.out: Taskmanager.o processes.o
+	gcc Taskmanager.o processes.o -o taskmanager.out
+
+processes.o: processes.c processes.h
+	gcc processes.c -o processes.o
+
+Taskmanager.o: Taskmanager,c processes.h
+	gcc Taskmanager.c -o Taskmanager.o
+
+clean:
+	rm -f *.o *.out

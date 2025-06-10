@@ -1,0 +1,12 @@
+library.out: Book.o LinkedList.o
+	gcc -o library.out Book.o LinkedList.o
+
+Book.o: Book.c LinkedList.h Book.h
+	gcc -c Book.c
+
+LinkedList.o: LinkedList.c LinkedList.h Book.h
+	gcc -c LinkedList.c
+
+clean:
+	rm -f *.o library.out
+
